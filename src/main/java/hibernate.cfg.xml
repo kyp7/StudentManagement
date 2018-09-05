@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+        "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">  
+<hibernate-configuration>  
+    <session-factory>  
+            
+    <property name="hbm2ddl.auto">update</property>    
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/student</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">password</property>
+        
+         <!-- JDBC connection pool settings … using built-in test pool -->
+ 		 <property name="connection.pool_size">1</property>
+
+        <!--  Select our SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>    
+       	
+       	<!--  Set the current session context -->
+        <property name="current_session_context_class">thread</property>
+        
+		<property name="hibernate.current_session_context_class">
+org.hibernate.context.internal.ThreadLocalSessionContext
+</property>
+        
+       
+       <!-- <mapping class="com.hcl.studentmanagement.model.Student"/>  -->
+       
+    </session-factory>  
+</hibernate-configuration>
